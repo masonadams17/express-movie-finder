@@ -1,0 +1,4 @@
+web: echo "MONGO_USER='cloud3'" > .env
+
+web: npm install
+web: node app.js
