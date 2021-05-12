@@ -74,7 +74,6 @@ app.get('/search/:id', async function(req, res){
             console.log('unable to get movie')
         }
         else{
-            console.log(result)
             res.render('movie',
             {
                 movie: result
