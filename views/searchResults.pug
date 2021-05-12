@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+
+
+    .container-fluid
+        .row.row-cols-6.row-cols-md2.g-4
+            each movie, i in movies
+                .col
+                    .card.h-100(style='width:18rem;')
+                        .card-body 
+                            h5.card-title= movie.original_title
+                            h6.card-subtitle.mb-2.text-muted Year: (#{movie.year})
+                            h6.card-subtitle.mb-2.text-muted Genre(s): #{movie.genre}
+                            h6.card-subtitle.mb-2.text-muted Director: #{movie.director}
+                            p.card-text= movie.description
+                            - let movieSelection = '/search/' + movie.imdb_title_id
+                            a.btn.btn-dark.gx-3(href=movieSelection) More Info 
+
+                            - let imdb = 'https://imdb.com/title/' + movie.imdb_title_id
+                            a.btn.btn-dark.mx-2(href=imdb) Imdb

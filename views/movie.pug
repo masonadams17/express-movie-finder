@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+    .container.text_center
+
+        h1.display-1 #{movie.original_title }
+        h3 Release Year: #{movie.year}
+        h3 Genre: #{movie.genre}
+        h3 Directed by: #{movie.director}
+        h3 Written by: #{movie.writer}
+        h5 Country: #{movie.country} 
+        h5 Publish Date: #{movie.date_published}
+        h5 Duration: #{movie.duration} minutes
+        
+        h5 Actors: 
+        p= movie.actors
+
+        h5 Description:
+        p=movie.description
+        
+        input.btn.btn-dark(type="button", value="Back", onClick="history.back()")
